@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shape : MonoBehaviour
+public abstract class Shape : MonoBehaviour
 {
     private string shapeName;// INHERITANCE
     public string m_ShapeName// ENCAPSULATION”
     {
+        get 
+        { 
+            return shapeName; 
+        }
         set
         {
             if (value == null)
@@ -19,10 +23,15 @@ public class Shape : MonoBehaviour
             }
         }
     }
-    public string colorName;// INHERITANCE
+    private string colorName;// INHERITANCE
+    public string m_ColorName { get { return colorName; } set { if (colorName == null) { colorName = "Black"; } else { colorName = value; } } }
     private Vector3 size;// INHERITANCE
     public Vector3 m_ShapeSize // ENCAPSULATION”
     {
+        get
+        {
+            return size;
+        }
         set
         {
             if (value == Vector3.zero)
@@ -36,43 +45,22 @@ public class Shape : MonoBehaviour
         }
     }
 
+    // POLYMORPHISM overriding
+    public abstract void ShapeName();
 
-    private void Update()
-    {
-        ShapeName();
-        ShapeName(shapeName);
-        ShapeColor();
-        ShapeColor(colorName);
-        ShapeSize();
-    }
 
     // POLYMORPHISM overriding
-    public virtual void ShapeName()
-    {
-        Debug.Log($"Hello I Am A {shapeName}");
-    }
+    public abstract void ShapeColor();
 
-    // POLYMORPHISM overloading
-    public virtual void ShapeName(string name)
-    {
-        Debug.Log($"Hello I Am A {name}");
-    }
+    public abstract void ShapeSize();
 
-    // POLYMORPHISM overriding
-    public virtual void ShapeColor()
-    {
-        Debug.Log($"Hi My Color Is {colorName}");
-    }
-    // POLYMORPHISM overloading
-    public virtual void ShapeColor(string color)
-    {
-        Debug.Log($"Hi My Color Is {color}");
-    }
+    public abstract void Reshape();
 
-    void ShapeSize()
-    {
-        size = Vector3.one;
-    }
+    public abstract void SayMyName();
+
+    public abstract void WhatsMyColor();
+
+
 
     /*we can override shapename and colorname because they are unique in that aspect
  but the size we want all the children to have te same size*/
