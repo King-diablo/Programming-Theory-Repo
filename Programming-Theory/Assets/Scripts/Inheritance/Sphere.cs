@@ -8,7 +8,7 @@ public class Sphere : Shape
 
     public override void ShapeName()
     {
-        shapeName = "Sphere";
+        m_ShapeName = "Sphere";
     }
 
     public override void ShapeColor()

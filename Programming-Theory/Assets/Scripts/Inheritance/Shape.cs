@@ -4,9 +4,37 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-    public string shapeName;// INHERITANCE
+    private string shapeName;// INHERITANCE
+    public string m_ShapeName
+    {
+        set
+        {
+            if (value == null)
+            {
+                Debug.Log("Name cannot be empty");
+            }
+            else
+            {
+                shapeName = value;
+            }
+        }
+    }
     public string colorName;// INHERITANCE
-    public Vector3 size;// INHERITANCE
+    private Vector3 size;// INHERITANCE
+    public Vector3 m_ShapeSize 
+    {
+        set
+        {
+            if (value == Vector3.zero)
+            {
+                value = Vector3.one;
+            }
+            else
+            {
+                size = value;
+            }
+        }
+    }
 
 
     private void Update()

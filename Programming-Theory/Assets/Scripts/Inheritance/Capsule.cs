@@ -6,7 +6,7 @@ public class Capsule : Shape
 {
     public override void ShapeName()
     {
-        shapeName = "Capsule";
+        m_ShapeName = "Capsule";
     }
 
     public override void ShapeColor()
