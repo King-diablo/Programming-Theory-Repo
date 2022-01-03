@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class Box : Shape
 {
+    public override void ShapeName()
+    {
+        shapeName = "Box";
+    }
 
+    public override void ShapeColor()
+    {
+        colorName = "Blue";
+    }
 }

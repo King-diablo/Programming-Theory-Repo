@@ -4,5 +4,13 @@ using UnityEngine;
 
 public class Capsule : Shape
 {
-    public float radius;
+    public override void ShapeName()
+    {
+        shapeName = "Capsule";
+    }
+
+    public override void ShapeColor()
+    {
+        colorName = "Red";
+    }
 }
