@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shape : MonoBehaviour
 {
     private string shapeName;// INHERITANCE
-    public string m_ShapeName
+    public string m_ShapeName// ENCAPSULATION”
     {
         set
         {
@@ -21,7 +21,7 @@ public class Shape : MonoBehaviour
     }
     public string colorName;// INHERITANCE
     private Vector3 size;// INHERITANCE
-    public Vector3 m_ShapeSize 
+    public Vector3 m_ShapeSize // ENCAPSULATION”
     {
         set
         {
